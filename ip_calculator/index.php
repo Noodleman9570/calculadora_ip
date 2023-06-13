@@ -172,4 +172,10 @@ body{
   <script src="ipconverter.js"></script>
   
 </body>
+
+<?php
+
+require_once '../partials/footer.php';
+
+?>
 </html>
