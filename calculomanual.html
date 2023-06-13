@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora IP</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+       <!-- Topbar Start -->
+       <div class="container-fluid bg-primary text-white d-none d-lg-flex">
+        <div class="container py-3">
+            <div class="d-flex align-items-center">
+                <a href="index.html">
+                    <h2 class="text-white fw-bold m-0">Calculadora IP</h2>
+                </a>
+                <div class="ms-auto d-flex align-items-center">
+                    <small class="ms-4"><i class="fa fa-map-marker-alt me-3"></i>San Cristóbal, Estado Táchira</small>
+                    <small class="ms-4"><i class="fa fa-envelope me-3"></i>aavendanourdaneta@gmail.com</small>
+                    <small class="ms-4"><i class="fa fa-phone-alt me-3"></i>+58 4147166765</small>
+                    <div class="ms-3 d-flex">
+                        <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-2" href="https://www.facebook.com/angel.urdaneta.7169?mibextid=ZbWKwL"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-2" href="https://instagram.com/aavendano09?igshid=ZDc4ODBmNjlmNQ=="><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-2" href="https://wa.me/qr/3R5HRKQAR542D1"><i
+                                 class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-white sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
+                <a href="index.html" class="navbar-brand d-lg-none">
+                    <h1 class="fw-bold m-0">Calculadora IP</h1>
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link active">Inicio</a>
+                        <a href="conceptosbasicos.html" class="nav-item nav-link">Conceptos Básicos</a>
+                        <a href="TCPIP.html" class="nav-item nav-link">TCP/IP</a>
+                        <a href="capas.html" class="nav-item nav-link">Capas</a>
+                        <a href="calculomanual.html" class="nav-item nav-link">Calculo manual de Subredes</a>
+                    </div>
+                    <div class="ms-auto d-none d-lg-block">
+                        <a href="ip_calculator/index.php" class="btn btn-primary rounded-pill py-2 px-3">Calculadora</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-2 text-white mb-4 animated slideInDown">Calculo manual de subredes</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="conceptosbasicos.html">Conceptos Basicos</a></li>
+                    <li class="breadcrumb-item"><a class="" href="ip_calculator/index.php">Calculadora</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+     <!-- About Start -->
+     <div class="container-xxl about mb-5" style="margin-top: 6rem;">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-6">
+                    <div class="h-100 d-flex align-items-center justify-content-center" style="min-height: 300px;">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/lEKR7WtKzDA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <style>
+                    .text-justify{
+                        text-align: justify;
+                    }
+                </style>
+
+                <div class="col-lg-6 pt-lg-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="bg-white rounded-top p-5 mt-lg-5">
+                        <p class="fs-5 fw-medium text-primary">Importante!</p>
+                        <h1 class="display-6 mb-4">¿Cómo funciona el subnetting?</h1>
+                        <p class="mb-4 text-justify">En el subnetting o subneteo se toman bits del ID del host “prestados” para crear una subred. Con solo un bit se tiene la posibilidad de generar dos subredes, puesto que solo se tiene en cuenta el 0 o el 1. Para un número mayor de subredes se tienen que liberar más bits, de modo que hay menos espacio para direcciones de hosts. Cabe remarcar en este caso que tanto las direcciones IP de una subred como aquellas que no forman parte de ninguna tienen la misma apariencia y los ordenadores tampoco detectan ninguna diferencia, de ahí que se creen las llamadas máscaras de subred. Si se envían paquetes de datos de Internet a la propia red, el router es capaz de decidir mediante esta máscara en qué subred distribuye los datos.</p>
+                        <div class="row g-5 pt-2 mb-5">
+                            <div class="col-sm-6">
+                                <img class="img-fluid mb-4" src="img/icon/icon-5.png" alt="">
+                                <h5 class="mb-3">¿Qué es un bit?</h5>
+                                <p class="text-justify">Un bit es un dígito del sistema de numeración binario, que se representa con dos valores, el 0 y el 1</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <img class="img-fluid mb-4" src="img/icon/icon-2.png" alt="">
+                                <h5 class="mb-3">¿Qué es una mascara de red?</h5>
+                                <p class="text-justify">Una máscara de red se define como una combinación de bits que funcionan para delimitar una red de ordenadores y dividir esta red en subredes</p>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" target="_blank" href="https://www.youtube.com/watch?v=lEKR7WtKzDA">Ver Video Explicativo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+ <!-- Footer Start -->
+ <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Información</h4>
+                <p class="mb-2 text-wrap">Plataforma didáctica para la Población estudiantil de la UNEFA facilitando el aprendizaje del Modelo TCP/IP</p>
+                <div class="d-flex pt-3">
+                    <a class="btn btn-square btn-light rounded-circle me-2" href="https://www.facebook.com/angel.urdaneta.7169?mibextid=ZbWKwL"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-light rounded-circle me-2" href="https://wa.me/qr/3R5HRKQAR542D1"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a class="btn btn-square btn-light rounded-circle me-2" href="https://instagram.com/aavendano09?igshid=ZDc4ODBmNjlmNQ=="><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Links de Navegación</h4>
+                <a class="btn btn-link" href="index.html">Inicio</a>
+                <a class="btn btn-link" href="conceptosbasicos.html">Conceptos Básicos</a>
+                <a class="btn btn-link" href="TCPIP.html">TCP/IP</a>
+                <a class="btn btn-link" href="capas.html">Capas</a>
+                <a class="btn btn-link" href="calculomanual.html">Calculo manual de subredes</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Realizado por:</h4>
+                <p class="mb-1">Angel Avendaño</p>
+                <h6 class="text-light">Ingeniería de Sistemas</h6>
+                <p class="mb-1">Séptimo Semestre</p>
+                <h6 class="text-light">Asignatura:</h6>
+                <p class="mb-1">Redes</p>
+                <h6 class="text-light">Profesor: Jefferson Guerrero</h6>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Plataforma Didáctica TCP/IP UNEFA</h4>
+                <p>San Cristóbal - Pueblo Nuevo - Estado Táchira</p>
+                <div class="position-relative w-100 text-center">
+                    <img width="100px" height="100px" class="me-3 mt-3" src="https://seeklogo.com/images/U/unefa-logo-3FC9336783-seeklogo.com.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Copyright Start -->
+<div class="container-fluid copyright py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy; <a class="fw-medium text-light" href="#">Calculadora TCP/IP</a>, UNEFA.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                Diseñada por <a class="fw-medium text-light" href="">Angel Avendaño</a>
+                Distribuida por <a class="fw-medium text-light" href="http://www.unefa.edu.ve/portal/">UNEFA</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

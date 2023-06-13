@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora IP</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-primary text-white d-none d-lg-flex">
+        <div class="container py-3">
+            <div class="d-flex align-items-center">
+                <a href="index.html">
+                    <h2 class="text-white fw-bold m-0">Calculadora IP</h2>
+                </a>
+                <div class="ms-auto d-flex align-items-center">
+                    <small class="ms-4"><i class="fa fa-map-marker-alt me-3"></i>San Cristóbal, Estado Táchira</small>
+                    <small class="ms-4"><i class="fa fa-envelope me-3"></i>aavendanourdaneta@gmail.com</small>
+                    <small class="ms-4"><i class="fa fa-phone-alt me-3"></i>+58 4147166765</small>
+                    <div class="ms-3 d-flex">
+                        <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-2" href="https://www.facebook.com/angel.urdaneta.7169?mibextid=ZbWKwL"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-2" href="https://instagram.com/aavendano09?igshid=ZDc4ODBmNjlmNQ=="><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-2" href="https://wa.me/qr/3R5HRKQAR542D1"><i
+                                 class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-white sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
+                <a href="index.html" class="navbar-brand d-lg-none">
+                    <h1 class="fw-bold m-0">Calculadora IP</h1>
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link active">Inicio</a>
+                        <a href="conceptosbasicos.html" class="nav-item nav-link">Conceptos Básicos</a>
+                        <a href="TCPIP.html" class="nav-item nav-link">TCP/IP</a>
+                        <a href="capas.html" class="nav-item nav-link">Capas</a>
+                        <a href="calculomanual.html" class="nav-item nav-link">Calculo manual de Subredes</a>
+                    </div>
+                    <div class="ms-auto d-none d-lg-block">
+                        <a href="ip_calculator/index.php" class="btn btn-primary rounded-pill py-2 px-3">Calculadora</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid px-0 mb-5">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/ip.png" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-lg-7 text-start">
+                                    <p class="fs-4 animated slideInRight text-dark">Bienvenido
+                                        <strong class="text-dark">Entorno de Desarrollo VLSM</strong>
+                                    </p>
+                                    <h1 class="display-1text-dark mb-4 animated slideInRight">Toda la Información necesaria</h1>
+                                    <a href="ip_calculator/index.php"
+                                        class="btn btn-primary rounded-pill py-3 px-5 animated slideInRight">Calculadora</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/ip9.png" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-end">
+                                <div class="col-lg-7 text-end">
+                                    <p class="fs-4 text-white animated slideInLeft">Bienvenido<strong></strong>
+                                    </p>
+                                    <h1 class="display-1 text-white mb-5 animated slideInLeft">Listo para comenzar</h1>
+                                    <a href=""
+                                        class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Calculadora</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+<style>
+    .text-justify{
+        text-align: justify;
+    }
+</style>
+
+    <!-- Features Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-0 feature-row">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="feature-item border h-100 p-5">
+                        <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
+                            <img class="img-fluid" src="img/ip5.png" alt="Icon">
+                        </div>
+                        <h5 class="mb-3">¿Qué es el VLSM?</h5>
+                        <p class="mb-0 text-justify">El concepto básico de VLSM es muy simple: se toma una red y se divide en sus redes fijas; luego se toma una de estas subredes y se vuelve a dividir tomando bits prestados de la porción de hosts, ajustándose así la cantidad de hosts requeridos por cada segmento de nuestra red.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="feature-item border h-100 p-5">
+                        <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
+                            <img class="img-fluid" src="img/ip.png" alt="Icon">
+                        </div>
+                        <h5 class="mb-3">¿Qué es una red?</h5>
+                        <p class="mb-0 text-justify">En informática, se entiende por red a la interconexión de un número determinado de computadores (o de redes, a su vez) mediante dispositivos alámbricos o inalámbricos que, mediante impulsos eléctricos u otros medios físicos, les permiten enviar y recibir información en paquetes de datos y compartir recursos.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="feature-item border h-100 p-5">
+                        <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
+                            <img class="img-fluid" src="img/ip1.jpg" alt="Icon">
+                        </div>
+                        <h5 class="mb-3">¿Qué es una direccion IP?</h5>
+                        <p class="mb-0 text-justify">Las IP son el identificador que permite que los dispositivos de una red puedan enviarse información entre sí. Además, estas direcciones contienen la información sobre la ubicación en tiempo real de un dispositivo, por lo cual, a Internet le beneficia, ya que necesita diferenciar los accesos que se usan para ingresar al cibermundo. </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="feature-item border h-100 p-5">
+                        <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
+                            <img class="img-fluid" src="img/red.jpg" alt="Icon">
+                        </div>
+                        <h5 class="mb-3">¿Qué es un dispositivo de red?</h5>
+                        <p class="mb-0 text-justify">Los dispositivos de red o dispositivos de conexión son los equipos físicos necesarios para la interacción y comunicación del hardware de una red informática. Se utilizan para conectar un ordenador y otros dispositivos para que puedan compartir archivos y recursos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="fs-5 fw-medium text-primary">Tips Informáticos</p>
+                <h1 class="display-5 mb-5">Les presentamos algunos datos claves en el mundo de las redes</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item position-relative h-100">
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-4"
+                                style="width: 64px; height: 64px;">
+                                <img class="img-fluid" src="img/icon/icon-5.png" alt="Icon">
+                            </div>
+                            <h5 class="mb-3">Dato Curioso N°1</h4>
+                                <p class="mb-0 text-justify">La dirección IP siempre la podrás notar rápidamente, dado que se presenta en forma de cadena con números separados por puntos. ¡Ah!, y si te preguntas por el rango, este va desde 0.0.0.0 hasta el 255.255.255.255. </p>
+                        </div>
+                        <div class="service-btn rounded-0 rounded-bottom">
+                            <a class="text-primary fw-medium" href="conceptosbasicos.html">Leer conceptos básicos<i
+                                    class="bi bi-chevron-double-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item position-relative h-100">
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-4"
+                                style="width: 64px; height: 64px;">
+                                <img class="img-fluid" src="img/icon/icon-6.png" alt="Icon">
+                            </div>
+                            <h5 class="mb-3">Dato Curioso N°2</h4>
+                                <p class="mb-0 text-justify">Existen dos tipos de IP. Una es el identificador de red (el cual sirve para encontrar el camino), mientras que la otra es el identificador de dispositivo (este sirve para que la información llegue hasta el dispositivo). </p>
+                        </div>
+                        <div class="service-btn rounded-0 rounded-bottom">
+                            <a class="text-primary fw-medium" href="conceptosbasicos.html">Leer conceptos básicos<i
+                                    class="bi bi-chevron-double-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item position-relative h-100">
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-4"
+                                style="width: 64px; height: 64px;">
+                                <img class="img-fluid" src="img/icon/icon-7.png" alt="Icon">
+                            </div>
+                            <h5 class="mb-3">Dato Curioso N°3</h4>
+                                <p class="mb-0 text-justify">la dirección IP sirve para localizar e identificar a un dispositivo único que está en una red externa o interna. Por ese motivo, es esencial que todo dispositivo cuente con una IP, ya que es la base para la comunicación</p>
+                        </div>
+                        <div class="service-btn rounded-0 rounded-bottom">
+                            <a class="text-primary fw-medium" href="conceptosbasicos.html">Leer conceptos básicos<i
+                                    class="bi bi-chevron-double-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Project Start -->
+    <div class="container-xxl pt-5">
+        <div class="container">
+            <div class="text-center text-md-start pb-5 pb-md-0 wow fadeInUp" data-wow-delay="0.1s"
+                style="max-width: 500px;">
+                <p class="fs-5 fw-medium text-primary">Desarrollo de Proyectos</p>
+                <h1 class="display-5 mb-5">Aplicando el calculo de subredes (Subnetting)</h1>
+            </div>
+
+<style>
+    .img-fluid1{
+    height: 300px;
+}
+
+</style>
+
+            <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="project-item mb-5">
+                    <div class="position-relative">
+                        <img class="img-fluid1" src="img/proyectoredes.png" alt="">
+                        <div class="project-overlay">
+                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href="img/proyectoredes.png"
+                                data-lightbox="project"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <a class="d-block h5" href="">Proyecto en Cisco Packet Tracer</a>
+                        <span>Construccion de una red LAN</span>
+                    </div>
+                </div>
+                <div class="project-item mb-5">
+                    <div class="position-relative">
+                        <img class="img-fluid1" src="img/proyectoredes1.jpg" alt="">
+                        <div class="project-overlay">
+                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href="img/proyectoredes1.jpg"
+                                data-lightbox="project"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <a class="d-block h5" href="">Proyecto en Cisco Packet Tracer</a>
+                        <span>Red LAN para una empresa</span>
+                    </div>
+                </div>
+                <div class="project-item mb-5">
+                    <div class="position-relative">
+                        <img class="img-fluid1" src="img/proyectoredes3.jpg" alt="">
+                        <div class="project-overlay">
+                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href="img/proyectoredes3.jpg"
+                                data-lightbox="project"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <a class="d-block h5" href="">Proyecto en Cisco Packet Tracer</a>
+                        <span>Paso a Paso se logra la construcción de grandes redes en simuladores</span>
+                    </div>
+                </div>
+                <div class="project-item mb-5">
+                    <div class="position-relative">
+                        <img class="img-fluid1" src="img/proyectoredes4.jpg" alt="">
+                        <div class="project-overlay">
+                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href="img/proyectoredes4.jpg"
+                                data-lightbox="project"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <a class="d-block h5" href="">Proyecto en Cisco Packet Tracer</a>
+                        <span>Desarrollo de las redes para una escuela</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Project End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl pt-5">
+        <div class="container">
+            <div class="text-center text-md-start pb-5 pb-md-0 wow fadeInUp" data-wow-delay="0.1s"
+                style="max-width: 500px;">
+                <p class="fs-5 fw-medium text-primary">Testimonios de los Beneficios</p>
+                <h1 class="display-5 mb-5">Que brinda el VLSM</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item testimonial-item1 rounded p-4 p-lg-5 mb-5">
+                    <img class="mb-4" src="img/ip1.jpg" alt="">
+                    <p class="mb-4 text-justify">En consecuencia, VLSM nos sirve y se usa para desacoplar la lógica de un esquema de hosts fijo sin tener que afectar a las otras subredes. Esto nos proporciona una flexibilidad absoluta basada en las especificaciones de nuestra red.</p>
+                </div>
+                <div class="testimonial-item testimonial-item1 rounded p-4 p-lg-5 mb-5">
+                    <img class="mb-4" src="img/ip12.png" alt="">
+                    <p class="mb-4 text-justify">El Subnetting o subneteo es la técnica de subdividir una gran red IP física en varias redes lógicas más pequeñas, de forma que cada una de estas subnets funcionen como una red individual respecto a envíos y recepción de paquetes, aunque sigan perteneciendo a una misma red principal y a un mismo dominio</p>
+                </div>
+                <div class="testimonial-item testimonial-item1 rounded p-4 p-lg-5 mb-5">
+                    <img class="mb-4" src="img/ip10.png" alt="">
+                    <p class="mb-4 text-justify">Permite el uso eficaz del espacio de direccionamiento. -Permite el uso de varias longitudes de la máscara de subred. -Divide un bloque de direcciones en bloques más pequeños.</p>
+                </div>
+                <div class="testimonial-item testimonial-item1 rounded p-4 p-lg-5 mb-5">
+                    <img class="mb-4" src="img/ip8.jpg" alt="">
+                    <p class="mb-4 text-justify">Los routers Cisco admiten VLSM con los protocolos de enrutamiento OSPF, IS-IS integrado,EIGRP, RIP v2 y enrutamiento estático. VLSM permite que una organización utilice más de una máscara de subred dentro del mismo espacio de direccionamiento de red.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Información</h4>
+                    <p class="mb-2 text-wrap">Plataforma didáctica para la Población estudiantil de la UNEFA facilitando el aprendizaje del Modelo TCP/IP</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-light rounded-circle me-2" href="https://www.facebook.com/angel.urdaneta.7169?mibextid=ZbWKwL"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-light rounded-circle me-2" href="https://wa.me/qr/3R5HRKQAR542D1"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-square btn-light rounded-circle me-2" href="https://instagram.com/aavendano09?igshid=ZDc4ODBmNjlmNQ=="><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Links de Navegación</h4>
+                    <a class="btn btn-link" href="index.html">Inicio</a>
+                    <a class="btn btn-link" href="conceptosbasicos.html">Conceptos Básicos</a>
+                    <a class="btn btn-link" href="TCPIP.html">TCP/IP</a>
+                    <a class="btn btn-link" href="capas.html">Capas</a>
+                    <a class="btn btn-link" href="calculomanual.html">Calculo manual de subredes</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Realizado por:</h4>
+                    <p class="mb-1">Angel Avendaño</p>
+                    <h6 class="text-light">Ingeniería de Sistemas</h6>
+                    <p class="mb-1">Séptimo Semestre</p>
+                    <h6 class="text-light">Asignatura:</h6>
+                    <p class="mb-1">Redes</p>
+                    <h6 class="text-light">Profesor: Jefferson Guerrero</h6>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Plataforma Didáctica TCP/IP UNEFA</h4>
+                    <p>San Cristóbal - Pueblo Nuevo - Estado Táchira</p>
+                    <div class="position-relative w-100 text-center">
+                        <img width="100px" height="100px" class="me-3 mt-3" src="https://seeklogo.com/images/U/unefa-logo-3FC9336783-seeklogo.com.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="fw-medium text-light" href="#">Calculadora TCP/IP</a>, UNEFA.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    Diseñada por <a class="fw-medium text-light" href="">Angel Avendaño</a>
+                    Distribuida por <a class="fw-medium text-light" href="http://www.unefa.edu.ve/portal/">UNEFA</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
