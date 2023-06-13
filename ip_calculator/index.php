@@ -124,17 +124,14 @@ body{
      <form action="">
         <p>Direccion IP:</p>
         <div class="control">
-          <i class="fa fa fa-envelope-o"></i>
           <input type="text" id="ip" placeholder="192.168.1.1"/>
         </div>
         <p>Prefijo de red:</p>
         <div class="control">
-          <i class="fa fa-key"></i>
           <input type="text" id="pref" placeholder="1-32"/>
         </div>
         <p>Número de subredes</p>
         <div class="control">
-          <i class="fa fa-key"></i>
           <input type="text" id="nsub" placeholder=""/>
         </div>
         <input type="submit" id="calc_btn" value="Ingresar numero de host por subred"/>

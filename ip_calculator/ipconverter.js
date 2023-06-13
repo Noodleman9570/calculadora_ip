@@ -529,10 +529,22 @@ $("#calc_btn").on("click", function(e){
     let nBitH = (32-pref);
 
     let cantHost = Math.pow(2, nBitH);
+    cantHost = cantHost / 4;
 
+    let band1 = false;
+    let band2 = false;
+    let band3 = false;
+    let ipTs;
+
+    band1 = isValidIP(ip);
+    band2 = intoRange(pref, 32);
+    band3 = intoRange(nsub, cantHost)
     
-    if (nsub < cantHost+1) {
-        
+    if (band1) {
+        if (band2) {
+            if (band3) {
+                
+      
         let ipObj = new IP(ip, pref); //objeto de direccion ip
 
         console.log(ipObj.netDec);
@@ -630,69 +642,21 @@ $("#calc_btn").on("click", function(e){
 
         
 
-        
+        }else{
+            alert("Minimo de sub redes: 1, Maximo de subredes: "+cantHost);
+        }
+    }else{
+        alert("El prefijo de red debe estar comprendido entre 1 a 32");
+    }
 
-        
 
-        
-        // let nBit = 0; //numero de bits para sub red
-        // let i = 0;
-
-        
-
-        // while (nBit < nsub) {
-        //     nBit = Math.pow(2,i)-2;
-        //     i++; 
-        // }
-        // i--;
-
-        // let newPref = pref + i;
-
-        
 
 
     }else{
-        alert("Se supero el limte de subredes posibles para esa barra de red")
+        alert("La ip ingresada no cumple con el formato correcto")
     }
 
     
-    
-
-
-    // let nbitSubr = 0; //numero de bits de subred
-    // nbitSubr = (32-nsub)-nbith;
-
-    // console.log(nbitSubr);
-
-    // let newPref = pref + nbitSubr; //nuevo prefijo
-
-    // console.log(newPref);
-
-    // let newMaskBin = ipObj.setMaskBin(newPref);
-    // console.log(newMaskBin);
-    // let newMaskDec = ipObj.binToDec(newMaskBin);
-    // console.log(newMaskDec);
-
-   // let network = ipObj.netDec;
-    //console.log(network);
-
-    //let lastOctMask = ipObj.maskDec[3];
-    //console.log(lastOctMask);
-
-    // let breakNet = (256 - parseInt(lastOctMask));
-    // console.log(breakNet);
-
-    
-
-    //console.log(ipObj.stringToArray());
-    //console.log(ipObj.decToBin(ip));
-    //console.log(ipObj.ipBin);
-    //console.log()
-    //console.log(ipObj.maskBin);
-    //console.log(ipObj.maskDec);
-
-    // console.log(convertDecToBin(ip));
-    // console.log(getMascara)(pref)
 })
 
 function burbuja(lista) {
@@ -728,4 +692,27 @@ function bitsNec(numHost){
 
     return [n, h];
 
+}
+
+function isValidIP(str) {
+    let verdad = str.split('.');
+    if(verdad.length != 4)
+      return false;
+    for(i in verdad){
+      if(!/^\d+$/g.test(verdad[i])
+      ||+verdad[i]>255
+      ||+verdad[i]<0
+      ||/^[0][0-9]{1,2}/.test(verdad[i]))
+        return false;
+    }
+    return true
+}
+
+function intoRange(num, max) {
+    var num;
+    if (parseInt(num) >= 1 && parseInt(num) <= max) {
+       return true;
+    } else {
+       return false;
+    }
 }
