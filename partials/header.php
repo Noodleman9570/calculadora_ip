@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="../img/favicon.ico" rel="icon">
 
     <link href="../libs/Bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- <link href="libs/DataTables/datatables.min.css" rel="stylesheet"/> -->

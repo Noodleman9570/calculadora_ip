@@ -554,87 +554,105 @@ $("#calc_btn").on("click", function(e){
         console.log(ipObj);
 
         let array = [];
+        
 
 
         $('#calc_vlsm').on('click', function(){
 
+            
+
             //$('#vlsmSubred').removeClass("desactive");
-            $('#vlsmSubred').show();
+            
             
             let array = [];
+            let band = false;
 
             for (let i = 0; i < nsub; i++) {
                
                 array[i] = $('#subred'+i).val()
-                
-            }
-
-            array = burbuja(array);
-
-            let n;
-            let h;
-            let pref;
-            let arrayPref = [];
-
-            for (let i = 0; i < array.length; i++) {
-
-                res = bitsNec(array[i])
-
-                n = res[0];
-                h = res[1];
-                
-                array[i] = h;
-
-                pref = (32-n);
-
-                arrayPref[i] = pref;
-                
-            }
-
-            // console.log(array)
-            // console.log(arrayPref);
-
-            let ipObjArr = [];
-            let nxRedBin = [];
-            let nxRedDec = [];
-            let broadBin = [];
-
-            
-
-            for (let i = 0; i < array.length; i++) {
-                if (i == 0) {
-                    nxRedDec = ipObj.netDec;
-                    nxRedDec = nxRedDec.join(".");
+                if (array[i].length == 0) {
+                    console.log(array[i]);
+                    band = false;
                 }else{
-                    broadBin = ipObjArr[i-1].broadcastBin;
-                    nxRedBin = ipObj.jumpNet(broadBin, arrayPref[i-1]);
-                    nxRedDec = ipObj.binToDec(nxRedBin);
-                    nxRedDec = nxRedDec.join(".");
+                    band = true;
+                }
+                
+            }
 
+            if (band) {
+
+                $('#vlsmSubred').show();
+
+                array = burbuja(array);
+
+                let n;
+                let h;
+                let pref;
+                let arrayPref = [];
+
+                for (let i = 0; i < array.length; i++) {
+
+                    res = bitsNec(array[i])
+
+                    n = res[0];
+                    h = res[1];
+                    
+                    array[i] = h;
+
+                    pref = (32-n);
+
+                    arrayPref[i] = pref;
+                    
                 }
 
-                ipObjArr[i] = new IP(nxRedDec, arrayPref[i]);
+                // console.log(array)
+                // console.log(arrayPref);
+
+                let ipObjArr = [];
+                let nxRedBin = [];
+                let nxRedDec = [];
+                let broadBin = [];
+
                 
+
+                for (let i = 0; i < array.length; i++) {
+                    if (i == 0) {
+                        nxRedDec = ipObj.netDec;
+                        nxRedDec = nxRedDec.join(".");
+                    }else{
+                        broadBin = ipObjArr[i-1].broadcastBin;
+                        nxRedBin = ipObj.jumpNet(broadBin, arrayPref[i-1]);
+                        nxRedDec = ipObj.binToDec(nxRedBin);
+                        nxRedDec = nxRedDec.join(".");
+
+                    }
+
+                    ipObjArr[i] = new IP(nxRedDec, arrayPref[i]);
+                    
+                }
+
+                $('#vlsmhost').hide();
+
+                $('#example').show();
+
+                $('#example').html(ipObj.renderTableIp());
+
+                $('#vlsmSubred').html(ipObj.renderSubNettingTable())
+
+                let html = '';
+
+                for (let i = 0; i < ipObjArr.length; i++) {
+                    
+                    html = html + ipObjArr[i].renderSubNettingTableRows(i);
+                    
+                    
+                }   
+                
+                $('#tbodyvlsm').html(html);
+
+            }else{
+                alert("No pueden haber campos vacios");
             }
-
-            $('#vlsmhost').hide();
-
-            $('#example').show();
-
-            $('#example').html(ipObj.renderTableIp());
-
-            $('#vlsmSubred').html(ipObj.renderSubNettingTable())
-
-            let html = '';
-
-            for (let i = 0; i < ipObjArr.length; i++) {
-                
-                html = html + ipObjArr[i].renderSubNettingTableRows(i);
-                
-                
-            }   
-            
-            $('#tbodyvlsm').html(html);
 
         });
 
@@ -661,19 +679,9 @@ $("#calc_btn").on("click", function(e){
 
 function burbuja(lista) {
 
-    var n, i, j, aux;
+    lista = lista.sort(function(a, b){return b - a});;
 
-        for (i = 1; i < n; i++) {
-            for (j = 0; j < (n - i); j++) {
-                if (lista[j] > lista[j + 1]) {
-                    aux = lista[j];
-                    lista[j] = lista[j + 1];
-                    lista[j + 1] = aux;
-                }
-            }
-        }
-
-        return lista;
+    return lista;
         
 }
 
@@ -716,3 +724,5 @@ function intoRange(num, max) {
        return false;
     }
 }
+
+burbuja();
