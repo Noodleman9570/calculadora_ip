@@ -31,6 +31,10 @@ $(document).ready(function(){
 
 });
 
+var ip;
+var pref;
+var nsub;
+
 var global = [];
 
 class IP {
@@ -403,7 +407,7 @@ class IP {
 
     }
 
-    renderVlsmTable(nsub){
+    renderVlsmTable(nsub, array = {}){
         let html = `
             <thead>
                 <th>Subred</th>
@@ -509,7 +513,12 @@ class IP {
 
 $("#calc_btn").on("click", function(e){
     e.preventDefault();
+    inicio();
     
+})
+
+
+function inicio(e){
     //$('#vlsmSubred').adClass("desactive");
 
     $('#vlsmhost').show();
@@ -518,10 +527,6 @@ $("#calc_btn").on("click", function(e){
 
     $('#example').hide();
     
-    let ip;
-    let pref;
-    let nsub;
-    
     ip = $("#ip").val();
     pref = $('#pref').val();
     nsub = $('#nsub').val();
@@ -529,6 +534,7 @@ $("#calc_btn").on("click", function(e){
     let nBitH = (32-pref);
 
     let cantHost = Math.pow(2, nBitH);
+    let cantHostSub = cantHost-2;
     cantHost = cantHost / 4;
 
     let band1 = false;
@@ -547,112 +553,14 @@ $("#calc_btn").on("click", function(e){
       
         let ipObj = new IP(ip, pref); //objeto de direccion ip
 
-        console.log(ipObj.netDec);
 
         $('#vlsmhost').html(ipObj.renderVlsmTable(nsub));
 
-        console.log(ipObj);
-
-        let array = [];
-        
 
 
         $('#calc_vlsm').on('click', function(){
 
-            
-
-            //$('#vlsmSubred').removeClass("desactive");
-            
-            
-            let array = [];
-            let band = false;
-
-            for (let i = 0; i < nsub; i++) {
-               
-                array[i] = $('#subred'+i).val()
-                if (array[i].length == 0) {
-                    console.log(array[i]);
-                    band = false;
-                }else{
-                    band = true;
-                }
-                
-            }
-
-            if (band) {
-
-                $('#vlsmSubred').show();
-
-                array = burbuja(array);
-
-                let n;
-                let h;
-                let pref;
-                let arrayPref = [];
-
-                for (let i = 0; i < array.length; i++) {
-
-                    res = bitsNec(array[i])
-
-                    n = res[0];
-                    h = res[1];
-                    
-                    array[i] = h;
-
-                    pref = (32-n);
-
-                    arrayPref[i] = pref;
-                    
-                }
-
-                // console.log(array)
-                // console.log(arrayPref);
-
-                let ipObjArr = [];
-                let nxRedBin = [];
-                let nxRedDec = [];
-                let broadBin = [];
-
-                
-
-                for (let i = 0; i < array.length; i++) {
-                    if (i == 0) {
-                        nxRedDec = ipObj.netDec;
-                        nxRedDec = nxRedDec.join(".");
-                    }else{
-                        broadBin = ipObjArr[i-1].broadcastBin;
-                        nxRedBin = ipObj.jumpNet(broadBin, arrayPref[i-1]);
-                        nxRedDec = ipObj.binToDec(nxRedBin);
-                        nxRedDec = nxRedDec.join(".");
-
-                    }
-
-                    ipObjArr[i] = new IP(nxRedDec, arrayPref[i]);
-                    
-                }
-
-                $('#vlsmhost').hide();
-
-                $('#example').show();
-
-                $('#example').html(ipObj.renderTableIp());
-
-                $('#vlsmSubred').html(ipObj.renderSubNettingTable())
-
-                let html = '';
-
-                for (let i = 0; i < ipObjArr.length; i++) {
-                    
-                    html = html + ipObjArr[i].renderSubNettingTableRows(i);
-                    
-                    
-                }   
-                
-                $('#tbodyvlsm').html(html);
-
-            }else{
-                alert("No pueden haber campos vacios");
-            }
+            calculate(cantHostSub, cantHost, ipTs, ipObj, nsub);
 
         });
 
@@ -673,9 +581,128 @@ $("#calc_btn").on("click", function(e){
     }else{
         alert("La ip ingresada no cumple con el formato correcto")
     }
+}
 
-    
-})
+function calculate(cantHostSub, cantHost, ipTs, ipObj, nsub, arrayH = {}){
+    //$('#vlsmSubred').removeClass("desactive");
+    $('#tbodyvlsm').hide;
+            
+            let array = [];
+            let band = false;
+            
+            let total = 0;
+
+            for (let i = 0; i < nsub; i++) {
+               
+                array[i] = $('#subred'+i).val()
+                if (array[i].length == 0) {
+                    console.log(array[i]);
+                    band = false;
+                }else{
+                    band = true;
+                }
+                
+            }
+
+
+            
+
+                   
+
+                    array = burbuja(array);
+
+                    let n;
+                    let h;
+                    let sumNhosts = 0;
+                    let pref;
+                    let arrayPref = [];
+
+                    for (let i = 0; i < array.length; i++) {
+
+                        res = bitsNec(array[i])
+
+                        n = res[0];
+                        h = res[1];
+                        
+                        array[i] = h;
+                        sumNhosts = sumNhosts + parseInt(array[i])
+                        pref = (32-n);
+
+                        arrayPref[i] = pref;
+                        
+                    }
+
+
+            
+
+            // alert(cantHost)
+            // alert(total)
+
+            if (sumNhosts <= cantHostSub) {
+                
+                $('#vlsmSubred').show();
+                if (band) {
+
+                    // console.log(array)
+                    // console.log(arrayPref);
+
+                    let ipObjArr = [];
+                    let nxRedBin = [];
+                    let nxRedDec = [];
+                    let broadBin = [];
+
+                    
+
+                    for (let i = 0; i < array.length; i++) {
+                        if (i == 0) {
+                            nxRedDec = ipObj.netDec;
+                            nxRedDec = nxRedDec.join(".");
+                        }else{
+                            broadBin = ipObjArr[i-1].broadcastBin;
+                            nxRedBin = ipObj.jumpNet(broadBin, arrayPref[i-1]);
+                            nxRedDec = ipObj.binToDec(nxRedBin);
+                            nxRedDec = nxRedDec.join(".");
+
+                        }
+
+                        ipObjArr[i] = new IP(nxRedDec, arrayPref[i]);
+                        
+                    }
+
+                    $('#vlsmhost').hide();
+
+                    $('#example').show();
+
+                    $('#example').html(ipObj.renderTableIp());
+
+                    $('#vlsmSubred').html(ipObj.renderSubNettingTable())
+
+                    let html = '';
+
+                    for (let i = 0; i < ipObjArr.length; i++) {
+                        
+                        html = html + ipObjArr[i].renderSubNettingTableRows(i);
+                        
+                        
+                    }   
+                    
+                    $('#tbodyvlsm').html(html);
+
+                }else{
+                    alert("No pueden haber campos vacios");
+  
+                }
+
+            }else{
+                alert("No se pueden tener en total mas de:  "+(cantHostSub)+" hosts entre las subredes");
+                
+                for (let i = 0; i < array.length; i++) {
+                    $('#subred'+i).val(array[i]);
+                    
+                }
+                
+            }
+}
 
 function burbuja(lista) {
 

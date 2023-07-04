@@ -3,6 +3,7 @@
 require_once '../partials/header.php';
 
 ?>
+<link rel="stylesheet" href="../libs/DataTables/responsive.dataTables.min.css">
     <style>
       @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
@@ -164,6 +165,7 @@ body{
   <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
   <!-- <script src="libs/DataTables/DataTables-1.13.4/js/jquery.dataTables.min.js"></script> -->
   <script src="libs/DataTables/DataTables-1.13.4/js/dataTables.bootstrap5.min.js"></script>
+  <script src="dataTables.responsive.min.js"></script>
   <script src="IP.js"></script>
   <script src="ipconverter.js"></script>
   
